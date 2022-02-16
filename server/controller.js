@@ -68,7 +68,7 @@ module.exports = {
     getPastAppointments: (req, res) => {
         sequelize.query(`
         SELECT
-        appt_id, date, service_type, notes, first_name, last_name
+        appt_id, date, service_type, notes, first_name, last_name, a.completed
         FROM cc_users u
             JOIN cc_clients c
                 ON u.user_id = c.user_id
